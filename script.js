@@ -1,11 +1,19 @@
-let width = 800;
-let height = 400;
+let width;
+
+if (screen.width > 900) {
+  width = 750;
+} else {
+  width = screen.width - screen.width / 5;
+  console.log(width);
+}
+
+let height = width / 2;
 
 let svgContainer = d3
   .select(".visHolder")
   .append("svg")
-  .attr("width", 900)
-  .attr("height", 460);
+  .attr("width", width + width / 8)
+  .attr("height", height + (height * 60) / 400);
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch(
@@ -93,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return d;
         })
         .attr("class", "bar")
-        .attr("transform", "translate(60, 0)")
+        .attr("transform", "translate(" + (width * 60) / 800 + ", 0)")
         .attr("data-date", function (d, i) {
           return data.data[i][0];
         })
@@ -124,12 +132,15 @@ document.addEventListener("DOMContentLoaded", function () {
       svgContainer
         .append("g")
         .attr("id", "x-axis")
-        .attr("transform", "translate(60, 400)")
+        .attr(
+          "transform",
+          "translate(" + (width * 60) / 800 + "," + height + ")"
+        )
         .call(xAxis);
       svgContainer
         .append("g")
         .attr("id", "y-axis")
-        .attr("transform", "translate(60,0)")
+        .attr("transform", "translate(" + (width * 60) / 800 + ",0)")
         .call(yAxis);
     });
 });

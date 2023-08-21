@@ -9,7 +9,6 @@
 
   .main {
     height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +19,7 @@
   }
   
   .container {
+    box-sizing: border-box;
     height: 560px;
     width: 900px;
     background-color: #fff;
@@ -29,15 +29,32 @@
     align-self: center;
     position: relative;
   }
+
+  #title {
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      width: 100vw;
+      height: calc(560vw * (100 / 900) + 50px);
+    }
+    .container #x-axis text,
+    .container #y-axis text {
+      font-size: 5px; /* Utilizează 1rem pentru dimensiunea fontului */
+    }
+    #title {
+      font-size: 1em;
+    }
+  }
+
   @media (min-width: 1000px) {
     .main .container {
       box-shadow: 2px 2px 20px;
     }
   }
-  #title {
-    text-align: center;
-    font-size: 2.5em;
-  }
+  
   .visHolder {
     position: absolute;
     top: 6em;
@@ -71,3 +88,5 @@
     margin-top: 20px;
     font-size: 15px;
   }
+
+  
