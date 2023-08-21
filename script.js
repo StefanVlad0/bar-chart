@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let currentGDP = data.data[i][1];
           tooltip.transition().duration(200).style("opacity", 0.9);
 
-          var xPosition = xScale(yearsDate[i]) + 60;
+          var xPosition = xScale(yearsDate[i]) + 90;
           var yPosition = height - 80;
 
           tooltip
