@@ -16,6 +16,7 @@
 
  ## :camera: Screenshots
 
+![1234](https://github.com/StefanVlad0/bar-chart/assets/72700839/c6a23c34-8d7d-4650-b803-acd065e17818)
 
 
 
