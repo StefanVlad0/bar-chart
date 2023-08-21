@@ -42,7 +42,7 @@
     }
     .container #x-axis text,
     .container #y-axis text {
-      font-size: 5px; /* Utilizează 1rem pentru dimensiunea fontului */
+      font-size: 5px;
     }
     #title {
       font-size: 1em;
